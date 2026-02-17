@@ -1,13 +1,35 @@
+<<<<<<< HEAD
+let postcodeData = [];
+
+fetch("data/postcode.json")
+  .then(res => res.json())
+  .then(data => {
+    postcodeData = data;
+    console.log("📦 postcode loaded", postcodeData.length);
+  });
+
+=======
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 /* =====================================================
    CONFIG
 ===================================================== */
 const API_URL = "http://localhost:3000/api/missing-persons";
 
 /* =====================================================
+<<<<<<< HEAD
+   DOM READY
+===================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================
+       HOME PAGE : SEARCH
+    ========================= */
+=======
    HOME PAGE : SEARCH & DISPLAY RESULT
 ===================================================== */
 document.addEventListener("DOMContentLoaded", () => {
 
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
     const searchBtn = document.getElementById("searchBtn");
 
     if (searchBtn) {
@@ -15,11 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const month = document.getElementById("month").value;
             const keyword = document.getElementById("keyword").value;
             const list = document.getElementById("personList");
+<<<<<<< HEAD
+
+            list.innerHTML = "กำลังค้นหา...";
+
+            try {
+                const res = await fetch(`${API_URL}?month=${month}&name=${keyword}`);
+=======
     
             list.innerHTML = "กำลังค้นหา...";
     
             try {
                 const res = await fetch(`${API_URL}?month=${month}&keyword=${keyword}`);
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
                 const data = await res.json();
                 renderPersons(data);
             } catch {
@@ -28,9 +58,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+<<<<<<< HEAD
+    /* =========================
+       RENDER RESULT
+    ========================= */
+=======
     /* =====================================================
        RENDER SEARCH RESULT
     ===================================================== */
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
     function renderPersons(data) {
         const list = document.getElementById("personList");
         if (!list) return;
@@ -56,9 +92,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+<<<<<<< HEAD
+    /* =========================
+       PROVINCE SELECT
+    ========================= */
+=======
     /* =====================================================
        PROVINCES (REPORT PAGE)
     ===================================================== */
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
     const provinces = [
         "กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร",
         "ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท",
@@ -89,6 +131,63 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+<<<<<<< HEAD
+    /* =========================
+       PDF EXPORT
+    ========================= */
+    const pdfBtn = document.getElementById("pdfBtn");
+    const reportForm = document.getElementById("reportForm");
+
+    if (pdfBtn && reportForm) {
+        pdfBtn.addEventListener("click", () => {
+
+            const clone = reportForm.cloneNode(true);
+
+            clone.querySelectorAll('input[type="file"]').forEach(i => i.remove());
+
+            html2pdf()
+                .set({
+                    margin: 10,
+                    filename: "แจ้งคนหาย.pdf",
+                    image: { type: "jpeg", quality: 0.98 },
+                    html2canvas: { scale: 2, useCORS: true },
+                    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+                })
+                .from(clone)
+                .save();
+        });
+    }
+
+        /* =========================
+       POSTCODE AUTO FILL
+    ========================= */
+    const postcodeInput = document.getElementById("postcode");
+const addressAuto = document.getElementById("addressAuto");
+
+if (postcodeInput && addressAuto) {
+    postcodeInput.addEventListener("input", () => {
+        const code = postcodeInput.value.trim();
+
+        if (code.length !== 5) {
+            addressAuto.value = "";
+            return;
+        }
+
+        // 🔍 ค้นหาจาก array
+        const matches = postcodeData.filter(
+            item => String(item.zipcode) === code
+        );
+
+        if (matches.length > 0) {
+            const first = matches[0];
+            addressAuto.value =
+              `ตำบล${first.subdistrict} อำเภอ${first.district} จังหวัด${first.province}`;
+        } else {
+            addressAuto.value = "ไม่พบข้อมูลรหัสไปรษณีย์";
+        }
+    });
+}
+=======
 /* =====================================================
    PDF EXPORT (REPORT PAGE)
 ===================================================== */
@@ -185,5 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   }
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 
 });
