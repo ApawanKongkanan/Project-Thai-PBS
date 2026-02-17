@@ -79,15 +79,25 @@
 <!-- ประเภท -->
 <div class="mb-3">
   <label class="form-label">ประเภทการแจ้ง</label>
+<<<<<<< HEAD
   <select class="form-select" required>
     <option value="">-- เลือกประเภท --</option>
     <option>แจ้งคนหาย</option>
+=======
+  <select class="form-select" name="report_type" required>
+    <option value="">-- เลือกประเภท --</option>
+    <option value="แจ้งคนหาย">แจ้งคนหาย</option>
+    <option value="แจ้งเรื่อง">แจ้งเรื่อง</option>
+    <option value="ตามคดี">ตามคดี</option>
+    <option value="ร้องทุกข์">ร้องทุกข์</option>
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
   </select>
 </div>
 
 <!-- หัวข้อ -->
 <div class="mb-3">
   <label class="form-label">หัวข้อการแจ้ง</label>
+<<<<<<< HEAD
   <select class="form-select" required>
     <option value="">-- เลือกหัวข้อ --</option>
     <option>ถูกลักพาตัว</option>
@@ -97,6 +107,17 @@
     <option>มีอาการทางสมอง / ป่วย</option>
     <option>ล่อลวงเพื่อทางเพศ / แรงงาน / ชู้สาว</option>
     <option>อื่น ๆ</option>
+=======
+  <select class="form-select" name="missing_reason" required>
+    <option value="">-- เลือกหัวข้อ --</option>
+    <option value="ถูกลักพาตัว">ถูกลักพาตัว</option>
+    <option value="ปัญหาการใช้สื่อโซเชียลมีเดีย">ปัญหาการใช้สื่อโซเชียลมีเดีย</option>
+    <option value="พลัดหลงออกจากบ้าน">พลัดหลงออกจากบ้าน</option>
+    <option value="มีปัญหากับครอบครัว / สมัครใจ">มีปัญหากับครอบครัว / สมัครใจ</option>
+    <option value="มีอาการทางสมอง / ป่วย">มีอาการทางสมอง / ป่วย</option>
+    <option value="ล่อลวงเพื่อทางเพศ / แรงงาน / ชู้สาว">ล่อลวงเพื่อทางเพศ / แรงงาน / ชู้สาว</option>
+    <option value="อื่น ๆ">อื่น ๆ</option>
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
   </select>
 </div>
 
@@ -109,12 +130,29 @@
 <!-- ความเร่งด่วน -->
 <div class="mb-3">
   <label class="form-label">ลำดับความสำคัญ</label><br>
+<<<<<<< HEAD
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="priority" required>
     <label class="form-check-label">ด่วน</label>
   </div>
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="priority">
+=======
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" 
+           type="radio" 
+           name="priority"
+           value="ด่วน" 
+           required>
+    <label class="form-check-label">ด่วน</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" 
+           type="radio" 
+           name="priority"
+           value="ด่วนมาก">
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
     <label class="form-check-label">ด่วนมาก</label>
   </div>
 </div>
@@ -122,12 +160,17 @@
 <!-- ชื่อผู้แจ้ง -->
 <div class="mb-3">
   <label class="form-label">ชื่อผู้แจ้ง</label>
+<<<<<<< HEAD
   <input type="text" class="form-control" minlength="5" required>
+=======
+  <input type="text" class="form-control" name="reporter_name" minlength="5" required>
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 </div>
 
 <!-- ที่อยู่ -->
 <div class="mb-3">
   <label class="form-label">ที่อยู่ที่ติดต่อได้</label>
+<<<<<<< HEAD
   <input type="text" class="form-control" minlength="5" required>
 </div>
 
@@ -149,12 +192,31 @@
 </div>
 
 
+=======
+  <textarea class="form-control" rows="2" name="contact_address"></textarea>
+</div>
+
+<!-- จังหวัด -->
+<div class="mb-3">
+    <label for="province" class="form-label">
+        จังหวัดที่เกิดเหตุ
+    </label>
+    <select id="province" class="form-select" name="province" required>
+        <option value="">-- เลือกจังหวัด --</option>
+    </select>
+</div>
+
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 <!-- เบอร์ -->
 <div class="mb-3">
   <label class="form-label">เบอร์โทรศัพท์</label>
   <input
   type="tel"
   class="form-control"
+<<<<<<< HEAD
+=======
+  name="phone_number"
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
   required
   pattern="[0-9]{10}"
   maxlength="10"
@@ -167,7 +229,11 @@
 <!-- ช่องทาง -->
 <div class="mb-3">
   <label class="form-label">ช่องทางการรับแจ้ง</label>
+<<<<<<< HEAD
   <select class="form-select">
+=======
+  <select class="form-select"name="inform_channels" required>
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
     <option>โทรศัพท์</option>
     <option>Facebook</option>
     <option>LINE</option>
@@ -178,18 +244,27 @@
 <!-- รายละเอียดช่องทาง -->
 <div class="mb-3">
   <label class="form-label">รายละเอียดช่องทางการติดต่อ</label>
+<<<<<<< HEAD
   <input type="text" class="form-control" placeholder="เช่น ชื่อ Facebook / LINE ID">
+=======
+  <input type="text" class="form-control" name="contact_channel" placeholder="เช่น ชื่อ Facebook / LINE ID">
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 </div>
 
 <!-- วันเวลา -->
 <div class="row">
     <div class="col-md-6">
       <label class="form-label">วันที่เกิดเหตุ</label>
+<<<<<<< HEAD
       <input type="date" class="form-control" id="incidentDate">
+=======
+      <input type="date" class="form-control" id="incidentDate" name="birth_date">
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
     </div>
   
     <div class="col-md-6">
       <label class="form-label">เวลาที่เกิดเหตุ</label>
+<<<<<<< HEAD
       <input
         type="time"
         class="form-control"
@@ -198,24 +273,42 @@
         required
       >
     </div>
+=======
+      <input type="time" class="form-control" id="incidentTime" name="birth_time">
+    </div>
+  </div>
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 
 <!-- ประเด็น -->
 <div class="mb-3">
   <label class="form-label">ประเด็นปัญหา</label>
+<<<<<<< HEAD
   <input type="text" class="form-control">
+=======
+  <input type="text" class="form-control" name="issue_topic">
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 </div>
 
 <!-- รายละเอียด -->
 <div class="mb-3">
   <label class="form-label">รายละเอียดเพิ่มเติม</label>
+<<<<<<< HEAD
   <textarea class="form-control" rows="4"></textarea>
+=======
+  <textarea class="form-control" rows="4" name="detail"></textarea>
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 </div>
 
 <!-- แนบไฟล์ -->
 <div class="mb-4">
+<<<<<<< HEAD
   <label class="form-label">แนบไฟล์ (รูป / เอกสารใบแจ้งความ)</label>
   <input type="file" class="form-control">
   <input type="file" class="form-control">
+=======
+  <label class="form-label">แนบไฟล์ (รูป / เอกสาร)</label>
+  <input type="file" class="form-control" name="notice">
+>>>>>>> 15fa46ab1bb4019682ecbaa42cd2d395a2182132
 </div>
 
 <!-- SUBMIT -->
